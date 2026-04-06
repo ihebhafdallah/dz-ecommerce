@@ -1,5 +1,7 @@
 package dao;
 
+
+import util.AppUtils;
 import model.User;
 import util.DBConnection;
 import java.sql.*;
@@ -17,7 +19,7 @@ public class UserDAO {
             ps.setString(1, user.getFirstName());
             ps.setString(2, user.getLastName());
             ps.setString(3, user.getEmail());
-            ps.setString(4, user.getPasswordHash());
+            ps.setString(4, AppUtils.hashWithMD5(user.getPasswordHash()));
             ps.setString(5, user.getPhone());
 
             ps.executeUpdate();

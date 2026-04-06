@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/dz_ecommerce/DZ_Ecommerce.java</file>
-            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/util/DBConnection.java</file>
-            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/util/AppUtils.java</file>
-            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/dao/UserDAO.java</file>
-            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/model/User.java</file>
+            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/model/Wilaya.java</file>
+            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/dao/WilayaDAO.java</file>
+            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/ui/WilayaFrame.java</file>
             <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/ui/UserFrame.java</file>
+            <file>file:/C:/Users/Iheb/Documents/NetBeansProjects/DZ_Ecommerce/src/ui/MainFrame.java</file>
         </group>
     </open-files>
 </project-private>

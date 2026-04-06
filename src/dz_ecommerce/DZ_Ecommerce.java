@@ -4,7 +4,7 @@
  */
 package dz_ecommerce;
 
-import ui.UserFrame;
+import ui.MainFrame;
 /**
  *
  * @author Iheb
@@ -16,7 +16,7 @@ public class DZ_Ecommerce {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        UserFrame u = new UserFrame();
+        MainFrame u = new MainFrame();
         u.setVisible(true);
     }
     
