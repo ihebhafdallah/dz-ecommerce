@@ -13,7 +13,7 @@ public class WilayaDAO {
         String sql = "INSERT INTO Wilayas (WilayaID, NameAr, NameFr) VALUES (?, ?, ?)";
 
         try (Connection con = DBConnection.getConnection(); PreparedStatement ps = con.prepareStatement(sql)) {
-
+            
             ps.setString(1, wilaya.getWilayaID());
             ps.setString(2, wilaya.getNameAr());
             ps.setString(3, wilaya.getNameFr());

@@ -13,7 +13,7 @@ import model.Wilaya;
  * @author Iheb
  */
 public class WilayaFrame extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(WilayaFrame.class.getName());
 
     /**
@@ -40,7 +40,7 @@ public class WilayaFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Wilaya Clé:");
 
@@ -97,15 +97,32 @@ public class WilayaFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         WilayaDAO wilayaDAO = new WilayaDAO();
 
-        Wilaya wilaya = new Wilaya();
+        String id = vKeyWilaya.getText().trim().toLowerCase();
+        String nameFr = vNameFR.getText().trim();
+        String nameAr = vNameAR.getText().trim();
 
-        wilaya.setWilayaID(vKeyWilaya.getText().trim());
-        wilaya.setNameFr(vNameFR.getText().trim());
-        wilaya.setNameAr(vNameAR.getText().trim());
+        Wilaya wilaya = new Wilaya(id, nameAr, nameFr);
 
-        wilayaDAO.addWilaya(wilaya);
+        if (wilayaDAO.wilayaExists(id)) {
 
-        JOptionPane.showMessageDialog(this, "Wilaya ajouté avec succès !");
+            int choice = JOptionPane.showConfirmDialog(
+                    this,
+                    "Cette wilaya existe déjà. Voulez-vous la modifier ?",
+                    "Confirmation",
+                    JOptionPane.YES_NO_OPTION
+            );
+
+            if (choice == JOptionPane.YES_OPTION) {
+                wilayaDAO.updateWilaya(wilaya);
+                JOptionPane.showMessageDialog(this, "Wilaya mise à jour avec succès !");
+            } else {
+                return;
+            }
+
+        } else {
+            wilayaDAO.addWilaya(wilaya);
+            JOptionPane.showMessageDialog(this, "Wilaya ajoutée avec succès !");
+        }
 
         vKeyWilaya.setText("");
         vNameFR.setText("");
